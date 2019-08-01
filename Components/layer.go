@@ -1,4 +1,5 @@
 package Components
+
 /*
 type AbstractLayer interface {
 	InsertDomain(domain Domain)
@@ -8,32 +9,26 @@ type AbstractLayer interface {
 }
 */
 type Layer struct {
-	DomainList []*Domain
-	name string
-	id uint64
-	ExperimentList []*Experiment
-	DomainMapper map[string] *Domain
+	DomainList       []*Domain
+	Name             string
+	Id               uint64
+	ExperimentList   []*Experiment
+	DomainMapper     map[string]*Domain
 	ExperimentMapper map[string]*Experiment
+	ParameterList    []*Parameter
+	trafficChan      chan *Traffic
 }
 
-func (layer *Layer) SetId(id uint64) {
-	layer.id = id
-}
-func (layer *Layer) GetId() uint64 {
-	return layer.id
-}
-func (layer *Layer) GetName()string {
-	return layer.name
-}
-func (layer *Layer)SetName(name string)  {
-	layer.name = name
-}
 func (layer *Layer) InsertDomain(domain *Domain) {
 	layer.DomainList = append(layer.DomainList, domain)
-	layer.DomainMapper[domain.GetName()] = domain
+	layer.DomainMapper[domain.Name] = domain
 }
 
 func (layer *Layer) InsertExperiment(expt *Experiment) {
 	layer.ExperimentList = append(layer.ExperimentList, expt)
-	layer.ExperimentMapper[expt.GetName()] = expt
+	layer.ExperimentMapper[expt.Name] = expt
+}
+
+func (layer *Layer) ReceiveTraffic(traffic *Traffic) {
+	layer.trafficChan <- traffic
 }
