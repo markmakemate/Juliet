@@ -8,4 +8,5 @@ Parameter的具体实现要根据不同的业务进行单独开发
 */
 type Parameter interface {
 	toString() []byte
+	receive([]byte)
 }

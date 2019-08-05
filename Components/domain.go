@@ -17,9 +17,12 @@ type Domain struct {
 	LayerList   []*Layer
 	Id          uint64
 	ExptList    []*Experiment
+	ExptMapper  map[uint64]*Experiment
+	Diversor    *Diversor
 }
 
-func (domain *Domain) Init(name string, id uint64) {
+func (domain *Domain) Init(name string, id uint64, diversor *Diversor) {
+	domain.Diversor = diversor
 	domain.Name = name
 	domain.Id = id
 }
@@ -38,4 +41,7 @@ func (domain *Domain) Diverse() {
 }
 func (domain *Domain) InsertExpt(expt *Experiment) {
 	domain.ExptList = append(domain.ExptList, expt)
+}
+func (domain *Domain) DeleteExpt(exptId uint64) {
+	delete(domain.ExptMapper, exptId)
 }

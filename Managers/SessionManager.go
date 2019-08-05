@@ -1,7 +1,7 @@
 package Managers
 
 import (
-	"ABTest/Components"
+	"caibeike-abtest/Components"
 	"net/http"
 )
 
