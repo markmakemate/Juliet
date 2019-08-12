@@ -1,7 +1,6 @@
 package Components
 
 import (
-	"caibeike-abtest/Managers"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"net/http"
 )
@@ -48,14 +47,6 @@ Components pkg is
 type BaseComponent interface {
 	Init(name string, id uint64)
 }
-
-type ConfigOfComponents struct {
-	ContainerManager *Managers.ContainerManager
-	Diversor         *Diversor
-}
-
-//config variable is the global configuration of Component package
-var Config ConfigOfComponents
 
 /*
 Parameter：最小的控制单元；

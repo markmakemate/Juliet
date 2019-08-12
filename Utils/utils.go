@@ -80,3 +80,14 @@ func DeleteFromArray(arr interface{}, key interface{}) interface{} {
 		return nil
 	}
 }
+
+func IsExist(arr []uint64, object uint64) bool {
+	flag := false
+	for x := range arr {
+		if arr[x] == object {
+			flag = true
+			break
+		}
+	}
+	return flag
+}
