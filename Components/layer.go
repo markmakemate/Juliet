@@ -1,34 +1,30 @@
 package Components
 
-/*
-type AbstractLayer interface {
-	InsertDomain(domain Domain)
-	GetId() uint64
-	SetId(id uint64)
-	InsertExperiment(expt Experiment)
-}
-*/
-type Layer struct {
-	DomainList       []*Domain
-	Name             string
-	Id               uint64
-	ExperimentList   []*Experiment
-	DomainMapper     map[string]*Domain
-	ExperimentMapper map[string]*Experiment
-	ParameterList    []*Parameter
-	trafficChan      chan *Traffic
-}
+import "sync/atomic"
 
-func (layer *Layer) InsertDomain(domain *Domain) {
-	layer.DomainList = append(layer.DomainList, domain)
-	layer.DomainMapper[domain.Name] = domain
+/**
+Layer实现
+*/
+func (layer *Layer) Init(name string, layerId uint64) {
+	layer.Id = atomic.LoadUint64(&layerId)
+	layer.Name = name
+	layer.ExptIdPool = []uint64{}
 }
 
 func (layer *Layer) InsertExperiment(expt *Experiment) {
-	layer.ExperimentList = append(layer.ExperimentList, expt)
-	layer.ExperimentMapper[expt.Name] = expt
+	Config.ContainerManager.ExperimentContainer.Inject(expt)
+	layer.ExptIdPool = append(layer.ExptIdPool, expt.Id)
+}
+
+func (layer *Layer) DeleteExperiment(exptId uint64) {
+	Config.ContainerManager.ExperimentContainer.Eject(exptId)
+	layer.ExptIdPool = DeleteFromUint64Array(layer.ExptIdPool, exptId)
 }
 
 func (layer *Layer) ReceiveTraffic(traffic *Traffic) {
-	layer.trafficChan <- traffic
+	/**
+	TODO
+	对traffic做layer层分流
+	*/
+
 }

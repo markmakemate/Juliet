@@ -1,15 +1,19 @@
 package Components
 
-/*
-type AbstractExperiment interface {
-	GetParameter() AbstractParameter
-	GetId() uint64
-	SetId(id uint64)
-}
+/**
+Experiment实现
 */
+func (experiment *Experiment) Serialize() {
 
-type Experiment struct {
-	Id    uint64
-	Param Parameter
-	Name  string
+}
+
+//RPC method
+func (experiment *Experiment) Init(name string, exptId uint64) {
+
+}
+
+func (experiment *Experiment) SetExptConfig(config ExptConfig) {
+	experiment.Type = config.Type
+	experiment.Ratio = config.Ratio
+	experiment.Timestamp = config.Timestamp
 }

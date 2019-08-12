@@ -1,24 +1,32 @@
 package Components
 
 import (
-	"fmt"
-	"log"
 	"net/http"
 )
 
-type Traffic struct {
-	Writer   http.ResponseWriter
-	Request  http.Request
-	DomainId uint64
-	LayerId  uint64
-	Expt     Experiment
+/**
+Traffic实现
+*/
+func (traffic *Traffic) Init(writer http.ResponseWriter, r *http.Request,
+	domainId uint64, layerId uint64) {
+	traffic.Request = r
+	traffic.DomainId = domainId
+	traffic.Writer = writer
+	traffic.LayerId = layerId
 }
 
-func (traffic *Traffic) Send() {
-	status, err := traffic.Writer.Write(traffic.Expt.Param.toString())
-	fmt.Printf("Client's url path:" + traffic.Request.URL.Path)
-	fmt.Printf("The status is: " + string(status))
-	if err != nil {
-		log.Fatal(err)
-	}
+func (traffic *Traffic) Send(signal chan int) {
+	go func() {
+		x := <-signal
+		if x == 1 {
+			status, err := traffic.Writer.Write(traffic.Expt.Param.toString())
+			if err != nil {
+				PrintLog(status, err, traffic)
+			}
+		}
+	}()
+}
+
+func (traffic *Traffic) SetExpt(experiment Experiment) {
+	traffic.Expt = experiment
 }

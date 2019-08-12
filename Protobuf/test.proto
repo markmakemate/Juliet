@@ -1,0 +1,11 @@
+service Test{
+    rpc Hello(HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest{
+    required string greeting = 1;
+}
+
+message HelloResponse{
+    required string reply = 1;
+}

@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba3a944-88d0-4527-8366-7e5962547437" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Components/definition.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Container/definition.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Container/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/definition.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/resourceManagerImpl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/sessionManagerImpl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Managers/webManagerImpl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Protobuf/test.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ABTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ABTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/diversor.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/diversor.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Components/domain.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/domain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/parameter.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/parameter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/ResourceManager.go" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/ResourceManager.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/SessionManager.go" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/SessionManager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/experiment.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/experiment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/layer.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/layer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/parameter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/traffic.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/traffic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Managers/ResourceManager.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Managers/SessionManager.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main/starter.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/starter.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,13 +59,15 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Components" />
       <recent name="D:\GOPATH\go\src\ABTest\webapp\pages" />
       <recent name="D:\GOPATH\go\src\ABTest\Managers" />
     </key>
@@ -65,22 +84,58 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="go build starter.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ABTest" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main/starter.go" />
+      <package value="caibeike-abtest" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build starter.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.proto" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Protobuf/src/github.com/golang/protobuf" />
+    </ignored-roots>
     <MESSAGE value="update pages, js, css, Components and Managers" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pages, js, css, Components and Managers" />
+    <MESSAGE value="update components" />
+    <option name="LAST_COMMIT_MESSAGE" value="update components" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Utils/utils.go</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
