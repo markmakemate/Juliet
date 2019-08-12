@@ -1,5 +1,8 @@
 package Managers
 
+/**
+所有的生成器方法
+*/
 func NewResourceManager(uuid string, cm *ContainerManager) *ResourceManager {
 	return &ResourceManager{
 		uuid:             uuid,

@@ -23,6 +23,7 @@ type Domain struct {
 type ExptConfig struct {
 	Type      string
 	Ratio     float32
+	Param     Parameter
 	Timestamp timestamp.Timestamp
 }
 
