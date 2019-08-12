@@ -67,19 +67,19 @@ func JudgeArrayType(a interface{}) int {
 
 //Transform abstract type to array
 func transformListType(a interface{}) interface{} {
-	flag := Components.JudgeArrayType(a)
+	flag := JudgeArrayType(a)
 	switch flag {
 	case 1:
-		p, _ := a.([]*Components.Domain)
+		p, _ := a.([]*Domain)
 		return p
 	case 2:
-		p, _ := a.([]*Components.Layer)
+		p, _ := a.([]*Layer)
 		return p
 	case 3:
-		p, _ := a.([]*Components.Experiment)
+		p, _ := a.([]*Experiment)
 		return p
 	case 4:
-		p, _ := a.([]*Components.Parameter)
+		p, _ := a.([]*Parameter)
 		return p
 	default:
 		fmt.Println("The type of container's mapper is wrong. Please check the container's mapper type")
@@ -89,19 +89,19 @@ func transformListType(a interface{}) interface{} {
 
 //Transform abstract type to map
 func transformMapperType(a interface{}) interface{} {
-	flag := Components.JudgeMapType(a)
+	flag := JudgeMapType(a)
 	switch flag {
 	case 1:
-		p, _ := a.(map[uint64]*Components.Domain)
+		p, _ := a.(map[uint64]*Domain)
 		return p
 	case 2:
-		p, _ := a.(map[uint64]*Components.Layer)
+		p, _ := a.(map[uint64]*Layer)
 		return p
 	case 3:
-		p, _ := a.(map[uint64]*Components.Experiment)
+		p, _ := a.(map[uint64]*Experiment)
 		return p
 	case 4:
-		p, _ := a.(map[string]*Components.Parameter)
+		p, _ := a.(map[string]*Parameter)
 		return p
 	default:
 		fmt.Println("The type of container's mapper is wrong. Please check the container's mapper type")
@@ -110,21 +110,21 @@ func transformMapperType(a interface{}) interface{} {
 
 	/**
 
-	_, ok1 := a.(map[uint64]*Components.Domain)
-	_, ok2 := a.(map[uint64]*Components.Layer)
-	_, ok3 := a.(map[uint64]*Components.Experiment)
-	_, ok4 := a.(map[string]*Components.Parameter)
+	_, ok1 := a.(map[uint64]*Domain)
+	_, ok2 := a.(map[uint64]*Layer)
+	_, ok3 := a.(map[uint64]*Experiment)
+	_, ok4 := a.(map[string]*Parameter)
 	if ok1 && !ok2 && !ok3 && !ok4 {
-		p, _ := a.(map[uint64]*Components.Domain)
+		p, _ := a.(map[uint64]*Domain)
 		return p
 	} else if !ok1 && ok2 && !ok3 && !ok4 {
-		p, _ := a.(map[uint64]*Components.Layer)
+		p, _ := a.(map[uint64]*Layer)
 		return p
 	} else if ok3 && !ok1 && !ok2 &&!ok4 {
-		p, _ := a.(map[uint64]*Components.Experiment)
+		p, _ := a.(map[uint64]*Experiment)
 		return p
 	} else if !ok3 && !ok1 && !ok2 && ok4{
-		p, _ := a.(map[string]*Components.Parameter)
+		p, _ := a.(map[string]*Parameter)
 		return p
 	} else {
 		fmt.Println("The type of container's mapper is wrong. Please check the container's mapper type")
