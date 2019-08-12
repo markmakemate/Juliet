@@ -1,9 +1,5 @@
 package Components
 
-import (
-	"caibeike-abtest/Utils"
-)
-
 var config ConfigOfContainer
 
 //Domain Container
@@ -19,7 +15,7 @@ func (dc *DomainContainer) Inject(domain *Domain) {
 }
 func (dc *DomainContainer) Eject(id uint64) {
 	delete(dc.DomainMapper, id)
-	Utils.DeleteFromArray(dc.DomainList, dc.DomainList[id])
+	DeleteFromArray(dc.DomainList, dc.DomainList[id])
 }
 func (dc *DomainContainer) Get(id uint64) *Domain {
 	return dc.DomainMapper[id]
@@ -38,7 +34,7 @@ func (lc *LayerContainer) Inject(layer *Layer) {
 }
 func (lc *LayerContainer) Eject(id uint64) {
 	delete(lc.LayerMapper, id)
-	Utils.DeleteFromArray(lc.LayerList, lc.LayerList[id])
+	DeleteFromArray(lc.LayerList, lc.LayerList[id])
 }
 func (lc *LayerContainer) Get(id uint64) *Layer {
 	return lc.LayerMapper[id]
@@ -57,7 +53,7 @@ func (ec *ExperimentContainer) Inject(expt *Experiment) {
 }
 func (ec *ExperimentContainer) Eject(id uint64) {
 	delete(ec.ExptMapper, id)
-	Utils.DeleteFromArray(ec.ExptList, ec.ExptList[id])
+	DeleteFromArray(ec.ExptList, ec.ExptList[id])
 }
 func (ec *ExperimentContainer) Get(id uint64) *Experiment {
 	return ec.ExptMapper[id]
