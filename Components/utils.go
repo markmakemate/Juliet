@@ -2,6 +2,7 @@ package Components
 
 import "fmt"
 
+//Delete uint64 object from []uint64 and return []uint64
 func DeleteFromUint64Array(a []uint64, key uint64) []uint64 {
 	index := 0
 	for i := 0; i < len(a); i++ {
@@ -19,13 +20,22 @@ func DeleteFromUint64Array(a []uint64, key uint64) []uint64 {
 	return a
 }
 
+//Print log on shell
 func PrintLog(status int, err error, traffic *Traffic) {
-	fmt.Printf("Client's url path:" + traffic.Request.URL.Path)
-	fmt.Printf("The status is: " + string(status))
-	fmt.Printf("The error info: " + err.Error())
+	if err != nil {
+		fmt.Printf("Client's url path:" + traffic.Request.URL.Path)
+		fmt.Printf("The status is: " + string(status))
+		fmt.Printf("The error info: " + err.Error())
+	}
 }
 
-//判定Map的类型
+/**
+判定Map的类型，return 整型
+:return 1 为 map[uint64]DomainPtr
+:return 2 为 map[uint64]LayerPtr
+:return 3 为 map[uint64]ExperimentPtr
+:return 4 为 map[string]ParamPtr
+*/
 func JudgeMapType(a interface{}) int {
 	_, ok1 := a.(map[uint64]*Domain)
 	_, ok2 := a.(map[uint64]*Layer)
@@ -45,7 +55,13 @@ func JudgeMapType(a interface{}) int {
 	}
 }
 
-//判定Array的类型
+/**
+判定Array的类型, return 整型
+:return 1 为 []DomainPtr
+:return 2 为 []LayerPtr
+:return 3 为 []ExperimentPtr
+:return 4 为 []ParamPtr
+*/
 func JudgeArrayType(a interface{}) int {
 	_, ok1 := a.([]*Domain)
 	_, ok2 := a.([]*Layer)
@@ -82,7 +98,7 @@ func transformListType(a interface{}) interface{} {
 		p, _ := a.([]*Parameter)
 		return p
 	default:
-		fmt.Println("The type of container's mapper is wrong. Please check the container's mapper type")
+		fmt.Println("The type of container's list is wrong. Please check the container's list type")
 		return nil
 	}
 }
@@ -134,6 +150,9 @@ func transformMapperType(a interface{}) interface{} {
 	*/
 }
 
+/**
+Delete any object from its corresponding array and return the array has been processed
+*/
 func DeleteFromArray(arr interface{}, key interface{}) interface{} {
 	domain, ok1 := arr.([]*Domain)
 	layer, ok2 := arr.([]*Layer)

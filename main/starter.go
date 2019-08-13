@@ -1,35 +1,19 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 /**
 服务启动流程：
-1. 实例化资源管理器、连接管理器和分流器
-2. 将持久化的实验资源数据加载到内存中
-3. 启动连接管理器的监听器，监听指定地址和端口
-AB测试平台只维护少量的实验资源的元数据信息，大部分都是通过RPC调用或者HTTP请求RESTful接口完成参数请求。数据拉取的过程都是由业务组自定义的
-*/
-type Arg interface {
-	toString() []byte
-}
-type Add struct {
-	A int
-	B int
-}
+1. 实例化资源管理器、连接管理器和分流器，配置必要的全局配置；
+2. 将本地持久化的实验资源数据加载到内存中；
+3. 根据本地日志记录的实验资源更新最近的时间戳，从实验平台后台拉取最新添加的实验资源数据；
+4. 启动连接管理器的监听器，监听指定地址和端口；
 
-func (add *Add) toString() []byte {
-	jsonstr, err := json.Marshal(add)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-	return jsonstr
-}
+A/B 测试平台只维护实验资源的元信息和完成服务端分流。通过 RPC 调用或者 HTTP 请求 RESTful 接口完成参数请求。数据拉取的过程由各个业务组自定义；
+实验平台与测试平台解耦，通过 dubbo-rpc 互相调用。客户端通过 RESTful 接口获取分流后的实验数据；
+作为灰度发布系统，整个系统应与业务系统解耦，系统内部应高度解耦，包与包之间的引用一定要保持单向性，不能出现环状导包或包互引现象；
+除网络和日志相关功能会采用成熟的第三方库外，其他均不采用第三方库；
+实验采集的结果数据应与实验平台高度耦合，打点上报的数据应该由单独的数据平台来解析；
+*/
+
 func main() {
-	var a []Arg
-	a = append(a, &Add{1, 2})
-	a = append(a, &Add{3, 4})
-	fmt.Println(string(a[0].toString()))
+
 }

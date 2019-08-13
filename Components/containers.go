@@ -2,113 +2,102 @@ package Components
 
 var config ConfigOfContainer
 
-//Domain Container
-type DomainContainer struct {
-	uuid         string
-	DomainList   []*Domain
-	DomainMapper map[uint64]*Domain
+/**
+Container 容器实现
+*/
+
+/**
+Domain Container implementation
+*/
+func (dc *DomainContainer) Init(uuid string) {
+	dc.uuid = uuid
 }
 
+//Inject a given domain into Container
 func (dc *DomainContainer) Inject(domain *Domain) {
 	dc.DomainList = append(dc.DomainList, domain)
 	dc.DomainMapper[domain.Id] = domain
 }
+
+//Delete a domain with id from Container
 func (dc *DomainContainer) Eject(id uint64) {
 	delete(dc.DomainMapper, id)
 	DeleteFromArray(dc.DomainList, dc.DomainList[id])
 }
+
+//Find a domain by id from Container
 func (dc *DomainContainer) Get(id uint64) *Domain {
 	return dc.DomainMapper[id]
 }
 
-//Layer Container
-type LayerContainer struct {
-	uuid        string
-	LayerList   []*Layer
-	LayerMapper map[uint64]*Layer
+/**
+Layer Container implementation
+*/
+func (lc *LayerContainer) Init(uuid string) {
+	lc.uuid = uuid
 }
 
+//Inject a given layer into Container
 func (lc *LayerContainer) Inject(layer *Layer) {
 	lc.LayerList = append(lc.LayerList, layer)
 	lc.LayerMapper[layer.Id] = layer
 }
+
+//Delete a layer with id from Container
 func (lc *LayerContainer) Eject(id uint64) {
 	delete(lc.LayerMapper, id)
 	DeleteFromArray(lc.LayerList, lc.LayerList[id])
 }
+
+//Find a layer by id from Container
 func (lc *LayerContainer) Get(id uint64) *Layer {
 	return lc.LayerMapper[id]
 }
 
-//Experiment Container
-type ExperimentContainer struct {
-	uuid       string
-	ExptList   []*Experiment
-	ExptMapper map[uint64]*Experiment
+/**
+Experiment Container implementation
+*/
+func (ec *ExperimentContainer) Init(uuid string) {
+	ec.uuid = uuid
 }
 
+//Inject a given layer into Container
 func (ec *ExperimentContainer) Inject(expt *Experiment) {
 	ec.ExptList = append(ec.ExptList, expt)
 	ec.ExptMapper[expt.Id] = expt
 }
+
+//Delete a layer with id from Container
 func (ec *ExperimentContainer) Eject(id uint64) {
 	delete(ec.ExptMapper, id)
 	DeleteFromArray(ec.ExptList, ec.ExptList[id])
 }
+
+//Find a layer by id from Container
 func (ec *ExperimentContainer) Get(id uint64) *Experiment {
 	return ec.ExptMapper[id]
 }
 
-type ParameterContainer struct {
-	uuid        string
-	ParamMapper map[string]*Parameter
+/**
+Parameter Container
+*/
+func (pc *ParameterContainer) Init(uuid string) {
+	pc.uuid = uuid
 }
 
+//Inject a given parameter of type into Container
 func (pc *ParameterContainer) Inject(param *Parameter, Type string) {
-	pc.ParamMapper[Type] = param
+	if (*param).GetType() == Type {
+		pc.ParamMapper[Type] = param
+	}
 }
+
+//Delete a parameter with type from Container
 func (pc *ParameterContainer) Eject(Type string) {
 	delete(pc.ParamMapper, Type)
 }
+
+//Find a parameter with type from Container
 func (pc *ParameterContainer) Get(Type string) *Parameter {
 	return pc.ParamMapper[Type]
-}
-
-/**
-根据配置自适应生成对应的container
-若配置出现错误，则返回nil
-*/
-func NewContainer() interface{} {
-	config = ConfigurationOfContainer
-	list := transformListType(config.ComponentList)
-	mapper := transformMapperType(config.ComponentMapper)
-	if list != nil && mapper != nil {
-		switch config.Type {
-		case 1:
-			return &DomainContainer{
-				uuid:         config.UUID,
-				DomainList:   list.([]*Domain),
-				DomainMapper: mapper.(map[uint64]*Domain),
-			}
-		case 2:
-			return &LayerContainer{
-				uuid:        config.UUID,
-				LayerList:   list.([]*Layer),
-				LayerMapper: mapper.(map[uint64]*Layer),
-			}
-		case 3:
-			return &ExperimentContainer{
-				uuid:       config.UUID,
-				ExptList:   list.([]*Experiment),
-				ExptMapper: mapper.(map[uint64]*Experiment),
-			}
-		case 4:
-			return &ParameterContainer{
-				uuid:        config.UUID,
-				ParamMapper: mapper.(map[string]*Parameter),
-			}
-		}
-	} else {
-		return nil
-	}
 }
