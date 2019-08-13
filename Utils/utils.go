@@ -1,7 +1,7 @@
 package Utils
 
 import (
-	"caibeike-abtest/Components"
+	"Athena/Components"
 	"fmt"
 )
 

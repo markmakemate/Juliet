@@ -1,7 +1,7 @@
 package Managers
 
 import (
-	"caibeike-abtest/Components"
+	"Athena/Components"
 )
 
 //必要的全局变量，在服务启动前需要完成配置

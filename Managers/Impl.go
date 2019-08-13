@@ -1,8 +1,10 @@
 package Managers
 
 import (
-	"caibeike-abtest/Components"
-	"caibeike-abtest/Utils"
+	"Athena/Components"
+	"Athena/Utils"
+	"Athena/rpc_service"
+	"context"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -123,3 +125,64 @@ func (sm *SessionManager) Send(signal chan int) {
 /**
 Web Manager all methods implementation
 */
+func (wm *WebManager)InsertDomain(ctx context.Context,
+	in *rpc_service.Domain) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) InsertLayerInDomain(ctx context.Context,
+	in *rpc_service.Data) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) InsertExperimentInLayer(ctx context.Context,
+	req *rpc_service.Data) (*rpc_service.Result, error){
+
+}
+
+func (wm *WebManager) PushNewParameter(ctx context.Context,
+	req *rpc_service.Parameter) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) DeleteDomain(ctx context.Context,
+	req *rpc_service.Domain) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) DeleteLayerInDomain(ctx context.Context,
+	req *rpc_service.Data) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) DeleteExptInLayer(ctx context.Context,
+	req *rpc_service.Data) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) DeleteParameter(ctx context.Context,
+	req *rpc_service.Parameter) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) UpdateDomain(ctx context.Context,
+	req *rpc_service.Domain) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) UpdateLayer(ctx context.Context,
+	req *rpc_service.Layer) (*rpc_service.Result, error) {
+
+
+}
+
+func (wm *WebManager) UpdateExperiment(ctx context.Context,
+	req *rpc_service.Experiment) (*rpc_service.Result, error) {
+
+}
+
+func (wm *WebManager) UpdateParameter(ctx context.Context,
+	req *rpc_service.Parameter) (*rpc_service.Result, error) {
+
+}
+

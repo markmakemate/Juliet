@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ABTest.iml" filepath="$PROJECT_DIR$/.idea/ABTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Athena/.idea/Athena.iml" filepath="$PROJECT_DIR$/../Athena/.idea/Athena.iml" />
     </modules>
   </component>
 </project>

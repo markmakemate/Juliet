@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba3a944-88d0-4527-8366-7e5962547437" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Managers/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc_service/consumer.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc_service/rpc_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/containers.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/containers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/definition.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/definition.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/generator.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/generator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/Components/utils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Managers/Impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/Impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/definition.go" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/definition.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/starter.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/starter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/marketing-old-ie.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/marketing.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/side-menu-old-ie.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/side-menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/img/common/file-icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/analysis/databoard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/analysis/hypothesisTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/experiment/checkExperiment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/experiment/createExperiment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/pages/signUp.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +25,21 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Athena" />
   </component>
   <component name="ProjectId" id="1P0NERZEyRU1ygPiIhMFROpWeTU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
-    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
@@ -86,13 +70,34 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="Athena" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="caibeike-abtest" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build starter.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="ABTest" />
+      <module name="Athena" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main/starter.go" />
       <package value="caibeike-abtest" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="Athena" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <package value="caibeike-abtest" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -121,6 +126,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/Protobuf/src/github.com/golang/protobuf" />
     </ignored-roots>
@@ -129,7 +135,8 @@
     <MESSAGE value="update generator and definition of traffic and experiment" />
     <MESSAGE value="optimize all" />
     <MESSAGE value="update util of components" />
-    <option name="LAST_COMMIT_MESSAGE" value="update util of components" />
+    <MESSAGE value="update all" />
+    <option name="LAST_COMMIT_MESSAGE" value="update all" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

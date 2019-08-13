@@ -1,0 +1,57 @@
+syntax = "proto3";
+option java_package = "com.caibeike.abtest.dubbo";
+service Consumer {
+
+    rpc InsertDomain(Domain) returns (Result){}
+
+    rpc InsertLayerInDomain(Data) returns (Result) {}
+
+    rpc InsertExperimentInLayer(Data) returns (Result) {}
+
+    rpc PushNewParameter(Parameter) returns (Result) {}
+
+    rpc DeleteDomain(Domain) returns (Result) {}
+
+    rpc DeleteLayerInDomain(Data) returns (Result) {}
+
+    rpc DeleteExptInLayer(Data) returns (Result) {}
+
+    rpc DeleteParameter(Parameter) returns (Result) {}
+
+    rpc UpdateDomain(Domain) returns (Result) {}
+
+    rpc UpdateLayer(Layer) returns (Result) {}
+
+    rpc UpdateExperiment(Experiment) returns (Result) {}
+
+    rpc UpdateParameter(Parameter) returns (Result) {}
+}
+
+message Domain {
+     string name = 1;
+     uint64 domainId = 2;
+}
+
+message Layer {
+     string name = 1;
+     uint64 layerId = 2;
+}
+
+
+message Experiment {
+     string name = 1;
+     uint64 exptId = 2;
+     string type = 3;
+}
+
+message Parameter {
+      string type = 3;
+}
+
+message Result {
+      string result = 1;
+}
+
+message Data{
+     string data = 1;
+}
