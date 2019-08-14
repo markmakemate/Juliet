@@ -12,6 +12,8 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.DS_Store
+.gitignore
 
 ### IntelliJ IDEA ###
 .idea
@@ -30,5 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-###DS_Store###
-.DS_Store
+
