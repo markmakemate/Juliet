@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aba3a944-88d0-4527-8366-7e5962547437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Managers/utils.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc_service/consumer.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc_service/rpc_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Managers/Impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/Managers/Impl.go" afterDir="false" />
+    <list default="true" id="aba3a944-88d0-4527-8366-7e5962547437" name="Default Changelist" comment="update all">
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/java/com/caibeike/athena/service/RpcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/css/marketing-old-ie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/css/marketing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/css/side-menu-old-ie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/css/side-menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/img/common/file-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/js/ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/analysis/databoard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/analysis/hypothesisTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/experiment/checkExperiment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/experiment/createExperiment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Athena/web/src/main/resources/static/WEB-INFO/pages/signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Athena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Athena/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +140,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/Protobuf/src/github.com/golang/protobuf" />
+      <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="update pages, js, css, Components and Managers" />
     <MESSAGE value="update components" />
@@ -142,7 +154,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Utils/utils.go</url>
+          <url>file://$PROJECT_DIR$/../Athena/Utils/utils.go</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
